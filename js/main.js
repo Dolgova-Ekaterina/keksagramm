@@ -1,1 +1,1 @@
-import { arrayPhoto } from "./data";
+import "./data";

@@ -31,3 +31,23 @@ function getNumber(str) {
     }
     return result == "" ? NaN : result;
 }
+
+const timeToMinutes = (time) => {
+    let [hours, minutes] = time.split(':');
+    return (Number(hours) * 60) + Number(minutes);
+  }
+ function inTime (startDay,endDay, startMeet, longMeet) {
+  
+ let timeStartDay = timeToMinutes(startDay);
+
+ let timeEndDay = timeToMinutes(endDay);
+ let timeStartMeet = timeToMinutes(startMeet);
+ let timeWork = timeEndDay - timeStartDay;
+ let nearTime = timeStartMeet - timeStartDay;
+ let upTime = timeEndDay - timeStartMeet;
+
+ if ((nearTime < timeWork) && (upTime >= longMeet))  {
+   return true;
+ }
+return false;
+ }
